@@ -4,7 +4,7 @@
 
 body {
   color: var(--black);
-  background: var(--gray);
+  background: var(--cream);
 }
 
 /* Custom CSS  */
@@ -34,6 +34,10 @@ body {
   height: clamp(40vh, 60em, 75vh);
 }
 
+.hero-height {
+  height: clamp(20vh, 40em, 64vh);
+}
+
 .service-card-height {
   height: clamp(10vh, 30em, 40vh);
 }
@@ -50,7 +54,8 @@ html {
 
     --black: #151515;
     --gray: #f2f2f2;
-    --neon: #bdff69;
+    --red: #c1121f;
+    --cream: #fdf0d5;
 
     /* FONT SIZES AND LINE HEIGHTS */
 
@@ -100,23 +105,23 @@ html {
   /* Text Sizes  */
 
   .display {
-    @apply text-display font-anton;
+    @apply text-display font-gambarino;
   }
 
   .h1 {
-    @apply text-h1 font-anton;
+    @apply text-h1 font-gambarino;
   }
 
   .h2 {
-    @apply text-h2 font-anton;
+    @apply text-h2 font-gambarino;
   }
 
   .h3 {
-    @apply text-h3 font-anton;
+    @apply text-h3 font-switzer;
   }
 
   .base {
-    @apply text-base font-satoshi;
+    @apply text-base font-switzer;
   }
 
   /* GRID SYSTEM */

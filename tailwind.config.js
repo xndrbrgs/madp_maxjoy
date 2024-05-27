@@ -34,7 +34,8 @@ module.exports = {
     colors: {
       black: "var(--black)",
       gray: "var(--gray)",
-      neon: "var(--neon)",
+      red: "var(--red)",
+      crean: "var(--cream)",
     },
     borderRadius: {
       none: "0",
@@ -51,8 +52,8 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        satoshi: ["var(--font-satoshi)"],
-        anton: ["var(--font-anton)"],
+        gambarino: ["var(--font-gambarino)"],
+        switzer: ["var(--font-switzer)"],
       },
     },
   },
