@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: var(--black);
+  background: var(--gray);
+}
+
+/* Custom CSS  */
+
+.burger-menu {
+  width: 22.5px;
+  position: relative;
+  pointer-events: auto;
+}
+
+.transition-duration {
+  transition: all 0.2s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.burger-menu::before {
+  transition: all 1s cubic-bezier(0.76, 0, 0.24, 1);
+}
+.burger-menu::after {
+  transition: all 1s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.video-translate {
+  transform: translate(-50%, -50%);
+}
+
+.video-height {
+  height: clamp(40vh, 60em, 75vh);
+}
+
+.service-card-height {
+  height: clamp(10vh, 30em, 40vh);
+}
+
+/* Responsiveness  */
+
+html {
+  font-size: 16px;
+}
+
+@layer base {
+  :root {
+    /* COLORS   */
+
+    --black: #151515;
+    --gray: #f2f2f2;
+    --neon: #bdff69;
+
+    /* FONT SIZES AND LINE HEIGHTS */
+
+    --fs-base: clamp(0.75rem, 0.7rem + 0.25vi, 1rem);
+    --lh-base: 1.4em;
+
+    --fs-h3: clamp(1.3327rem, 1.1492rem + 0.9173vi, 2.25rem);
+    --lh-h3: 1.3em;
+
+    --fs-h2: clamp(1.7764rem, 1.4567rem + 1.5986vi, 3.375rem);
+    --lh-h2: 1.2em;
+
+    --fs-h1: clamp(3.1565rem, 2.2691rem + 4.4372vi, 7.5938rem);
+    --lh-h1: 1.2em;
+
+    --fs-display: clamp(4.2077rem, 2.7711rem + 7.183vi, 11.3906rem);
+    --lh-display: 0.9em;
+
+    /* FLUID SPACING */
+
+    --space-xs-s: clamp(0.5rem, 0.4563rem + 0.4531vi, 1rem);
+    --space-s-m: clamp(0.75rem, 0.568rem + 0.7767vi, 1.5rem);
+    --space-m-l: clamp(1.125rem, 0.9126rem + 0.9061vi, 2rem);
+    --space-l-xl: clamp(1.5rem, 1.1359rem + 1.5534vi, 3rem);
+    --space-xl-2xl: clamp(2.25rem, 1.8252rem + 1.8123vi, 4rem);
+    --space-2xl-3xl: clamp(3rem, 2.2718rem + 3.1068vi, 6rem);
+    --space-3xl-4xl: clamp(4.5rem, 3.6505rem + 3.6246vi, 8rem);
+  }
+}
+
+@layer components {
+  /* Custom Before and After */
+
+  .burger-before {
+    @apply before:content-[''] before:h-[0.0625rem] before:w-full before:bg-black before:relative before:block before:top-[0.25rem];
+  }
+  .burger-after {
+    @apply after:content-[''] after:h-[0.0625rem] after:w-full after:bg-black after:relative after:block after:top-[-0.25rem];
+  }
+  .burger-before-active {
+    @apply before:top-[0.0625rem] before:rotate-[-45deg];
+  }
+  .burger-after-active {
+    @apply after:top-[-0.0625rem] after:rotate-[45deg];
+  }
+
+  /* Text Sizes  */
+
+  .display {
+    @apply text-display font-anton;
+  }
+
+  .h1 {
+    @apply text-h1 font-anton;
+  }
+
+  .h2 {
+    @apply text-h2 font-anton;
+  }
+
+  .h3 {
+    @apply text-h3 font-anton;
+  }
+
+  .base {
+    @apply text-base font-satoshi;
+  }
+
+  /* GRID SYSTEM */
+
+  .container-fluid {
+    @apply mx-auto w-full md:px-[2.5rem] px-[1rem];
+  }
+  .row {
+    @apply flex flex-wrap mr-[-1.06rem] w-full h-full;
+  }
+  .col {
+    @apply grow block px-[1.06rem] w-full h-full;
+  }
+
+  /* Col System */
+  .col-1 {
+    @apply grow shrink block px-[0.5rem] max-w-[8.333%];
+  }
+  .col-2 {
+    @apply grow shrink block px-[0.5rem] max-w-[16.666667%];
+  }
+  .col-3 {
+    @apply grow shrink block px-[0.5rem] max-w-[25%];
+  }
+  .col-4 {
+    @apply grow shrink block px-[0.5rem] max-w-[33.333333%];
+  }
+  .col-5 {
+    @apply grow shrink block px-[0.5rem] max-w-[41.666667%];
+  }
+  .col-6 {
+    @apply grow shrink block px-[0.5rem] max-w-[50%];
+  }
+  .col-7 {
+    @apply grow shrink block px-[0.5rem] max-w-[58.333333%];
+  }
+  .col-8 {
+    @apply grow shrink block px-[0.5rem] max-w-[66.666667%];
+  }
+  .col-9 {
+    @apply grow shrink block px-[0.5rem] max-w-[75%];
+  }
+  .col-10 {
+    @apply grow shrink block px-[0.5rem] max-w-[83.333333%];
+  }
+  .col-11 {
+    @apply grow shrink block px-[0.5rem] max-w-[91.666667%];
+  }
+  .col-12 {
+    @apply grow shrink block px-[0.5rem] max-w-full;
+  }
+}
