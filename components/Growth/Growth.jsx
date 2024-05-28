@@ -27,17 +27,11 @@ function Growth() {
         <div className="col-2" />
         <div className="col-5 text-end">
           <h3 className="h3">
-            In 1962, the museum purchased "Flaming June" by Frederic Leighton,
+            In 1962, the museum purchased<span className="italic">"Flaming June"</span> by Frederic Leighton,
             which would become one of its most iconic pieces.
           </h3>
         </div>
       </div>
-
-      {/* SVG Path  */}
-      <div className="mt-xxl">
-        <SVGPath />
-      </div>
-
     </section>
   );
 }

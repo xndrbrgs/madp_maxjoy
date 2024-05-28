@@ -7,6 +7,9 @@ import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Parallax from "@/components/Parallax/Parallax";
 import Growth from "@/components/Growth/Growth";
+import SVGPath from "@/components/Growth/SVGPath";
+import ImgScale from "@/components/FlamingJune/ImgScale";
+import Theory from "@/components/FlamingJune/Theory";
 
 export default function Home() {
   useEffect(() => {
@@ -21,11 +24,14 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="max-w-[1440px] mx-auto">
+    <main>
       {/* <Header /> */}
       {/* <Hero /> */}
       {/* <Parallax /> */}
       <Growth />
+      <SVGPath />
+      <ImgScale />
+      <Theory />
     </main>
   );
 }
