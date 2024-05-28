@@ -18,10 +18,10 @@ function ImgScale() {
   return (
     <motion.div
       ref={container}
-      className="relative h-[200vh]"
+      className="relative h-[150vh]"
       style={{ backgroundColor: bgColor }}
     >
-      <div className="sticky top-[0] h-[100vh] overflow-hidden">
+      <div className="sticky top-[0] left-[0] h-[100vh] overflow-hidden">
         <div className="w-full h-full flex justify-center items-center">
           {scaleComplete && (
             <div className="z-40 display">Animation Complete!</div>

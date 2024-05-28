@@ -9,7 +9,8 @@ import Parallax from "@/components/Parallax/Parallax";
 import Growth from "@/components/Growth/Growth";
 import SVGPath from "@/components/Growth/SVGPath";
 import ImgScale from "@/components/FlamingJune/ImgScale";
-import Theory from "@/components/FlamingJune/Theory";
+import Figure from "@/components/FlamingJune/Figure";
+import Pose from "@/components/FlamingJune/Pose";
 
 export default function Home() {
   useEffect(() => {
@@ -28,10 +29,10 @@ export default function Home() {
       {/* <Header /> */}
       {/* <Hero /> */}
       {/* <Parallax /> */}
-      <Growth />
+      {/* <Growth />
       <SVGPath />
-      <ImgScale />
-      <Theory />
+      <ImgScale /> */}
+      <Figure />
     </main>
   );
 }

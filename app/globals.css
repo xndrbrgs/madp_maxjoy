@@ -30,6 +30,10 @@ body {
   transform: translate(-50%, -50%);
 }
 
+.img-clip {
+  clip-path: circle(50% at 50% 50%);
+}
+
 .video-height {
   height: clamp(40vh, 60em, 75vh);
 }
