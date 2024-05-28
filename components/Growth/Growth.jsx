@@ -1,4 +1,5 @@
 import React from "react";
+import SVGPath from "./SVGPath";
 
 function Growth() {
   return (
@@ -33,7 +34,10 @@ function Growth() {
       </div>
 
       {/* SVG Path  */}
-      
+      <div className="mt-xxl">
+        <SVGPath />
+      </div>
+
     </section>
   );
 }
