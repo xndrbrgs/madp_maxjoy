@@ -1,6 +1,6 @@
 import { useScroll, motion, useTransform } from "framer-motion";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 function Figure() {
   const container = useRef();
@@ -21,33 +21,88 @@ function Figure() {
       "circle(78.1% at 48% 58%)",
     ]
   );
-  const opacityTitle = useTransform(
+  const opacityFigure = useTransform(
     scrollYProgress,
-    [0, 0.1, 0.9, 1],
+    [0, 0.1, 0.28, 0.33],
     [0, 1, 1, 0]
   );
-  const opacityDescription = useTransform(
+  const opacityFigureDescription = useTransform(
     scrollYProgress,
-    [0, 0.3, 0.4, 0.9, 1],
+    [0, 0.09, 0.1, 0.28, 0.33],
     [0, 0, 1, 1, 0]
+  );
+
+  const opacityPose = useTransform(
+    scrollYProgress,
+    [0.33, 0.35, 0.5, 0.52],
+    [0, 1, 1, 0]
+  );
+  const opacityPoseDescription = useTransform(
+    scrollYProgress,
+    [0.33, 0.35, 0.36, 0.5, 0.52],
+    [0, 0, 1, 1, 0]
+  );
+
+  const opacityPlacement = useTransform(
+    scrollYProgress,
+    [0.52, 0.53, 0.68, 0.69],
+    [0, 1, 1, 0]
+  );
+  const opacityPlacementDescription = useTransform(
+    scrollYProgress,
+    [0.52, 0.53, 0.57, 0.68, 0.69],
+    [0, 0, 1, 1, 0]
+  );
+
+  const opacityLights = useTransform(
+    scrollYProgress,
+    [0.72, 0.73, 0.825, 0.83],
+    [0, 1, 1, 0]
+  );
+  const opacityLightsDescription = useTransform(
+    scrollYProgress,
+    [0.73, 0.74, 0.75, 0.825, 0.83],
+    [0, 0, 1, 1, 0]
+  );
+
+  const opacityShadows = useTransform(
+    scrollYProgress,
+    [0.83, 0.85, 0.93, 0.95],
+    [0, 1, 1, 0]
+  );
+  const opacityShadowsDescription = useTransform(
+    scrollYProgress,
+    [0.83, 0.84, 0.85, 0.95, 0.95],
+    [0, 0, 1, 1, 0]
+  );
+
+  const opacityFlaming = useTransform(
+    scrollYProgress,
+    [0.95, 0.96, 0.93, 1],
+    [0, 1, 1, 1]
+  );
+  const opacityFlamingDescription = useTransform(
+    scrollYProgress,
+    [0.95, 0.96, 0.97, 1],
+    [0, 0, 1, 1]
   );
 
   return (
     <section ref={container} className="bg-gray">
-      <div className="relative h-[800vh]">
+      <div className="relative h-[1200vh]">
         <div className="sticky top-[0] h-screen">
           <div className="flex">
             <div className="w-2/5 h-screen pl-xl relative">
               {/* Figure */}
               <div className="absolute top-[0] left-[0] h-screen flex flex-col justify-between">
                 <motion.div
-                  style={{ opacity: opacityTitle }}
+                  style={{ opacity: opacityFigure }}
                   className="pt-xl pl-xl h2"
                 >
                   Central Figure
                 </motion.div>
                 <motion.div
-                  style={{ opacity: opacityDescription }}
+                  style={{ opacity: opacityFigureDescription }}
                   className="pb-fxl pl-xl pr-md base"
                 >
                   The painting features a single female figure in a deep,
@@ -60,13 +115,13 @@ function Figure() {
               {/* Pose */}
               <div className="absolute top-[0] left-[0] h-screen flex flex-col justify-between">
                 <motion.div
-                  style={{ opacity: opacityTitle }}
+                  style={{ opacity: opacityPose }}
                   className="pt-xl pl-xl h2"
                 >
                   Pose
                 </motion.div>
                 <motion.div
-                  style={{ opacity: opacityDescription }}
+                  style={{ opacity: opacityPoseDescription }}
                   className="pb-fxl pl-xl pr-md base"
                 >
                   The woman is curled up on a cushioned chair, with her head
@@ -79,13 +134,13 @@ function Figure() {
               {/* Placement */}
               <div className="absolute top-[0] left-[0] h-screen flex flex-col justify-between">
                 <motion.div
-                  style={{ opacity: opacityTitle }}
+                  style={{ opacity: opacityPlacement }}
                   className="pt-xl pl-xl h2"
                 >
                   Placement
                 </motion.div>
                 <motion.div
-                  style={{ opacity: opacityDescription }}
+                  style={{ opacity: opacityPlacementDescription }}
                   className="pb-fxl pl-xl pr-md base"
                 >
                   The woman's curled, almost circular pose creates a dynamic yet
@@ -99,13 +154,13 @@ function Figure() {
               {/* Lights */}
               <div className="absolute top-[0] left-[0] h-screen flex flex-col justify-between">
                 <motion.div
-                  style={{ opacity: opacityTitle }}
+                  style={{ opacity: opacityLights }}
                   className="pt-xl pl-xl h2"
                 >
                   Lights
                 </motion.div>
                 <motion.div
-                  style={{ opacity: opacityDescription }}
+                  style={{ opacity: opacityLightsDescription }}
                   className="pb-fxl pl-xl pr-md base"
                 >
                   The lighting in the painting appears to come from the upper
@@ -118,13 +173,13 @@ function Figure() {
               {/* Shadows */}
               <div className="absolute top-[0] left-[0] h-screen flex flex-col justify-between">
                 <motion.div
-                  style={{ opacity: opacityTitle }}
+                  style={{ opacity: opacityShadows }}
                   className="pt-xl pl-xl h2"
                 >
                   Shadows
                 </motion.div>
                 <motion.div
-                  style={{ opacity: opacityDescription }}
+                  style={{ opacity: opacityShadowsDescription }}
                   className="pb-fxl pl-xl pr-md base"
                 >
                   Subtle shadows under her body, along the curves of her dress,
@@ -136,13 +191,13 @@ function Figure() {
               {/* Flaming June */}
               <div className="absolute top-[0] left-[0] h-screen flex flex-col justify-between">
                 <motion.div
-                  style={{ opacity: opacityTitle }}
-                  className="pt-xl pl-xl h2"
+                  style={{ opacity: opacityFlaming }}
+                  className="pt-xl pl-xl h2 text-red"
                 >
                   Flaming June
                 </motion.div>
                 <motion.div
-                  style={{ opacity: opacityDescription }}
+                  style={{ opacity: opacityFlamingDescription }}
                   className="pb-fxl pl-xl pr-md base"
                 >
                   The composition of "Flaming June" is a carefully crafted

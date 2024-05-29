@@ -1,9 +1,22 @@
-import React from "react";
+import { useScroll, useTransform, motion } from "framer-motion";
+import { Container } from "postcss";
+import React, { useRef } from "react";
 import SVGPath from "./SVGPath";
 
 function Growth() {
+  const container = useRef();
+  const { scrollYProgress } = useScroll({
+    target: container,
+  });
+
+  const bgColor = useTransform(scrollYProgress, [0, 1], ["#FDF0D5", "#F2F2F2"]);
+
   return (
-    <section className="container-fluid">
+    <motion.section
+      ref={container}
+      style={{ backgroundColor: bgColor }}
+      className="container-fluid"
+    >
       {/* Title  */}
       <div className="row">
         <div className="col-12 text-center display">
@@ -27,12 +40,15 @@ function Growth() {
         <div className="col-2" />
         <div className="col-5 text-end">
           <h3 className="h3">
-            In 1962, the museum purchased<span className="italic">"Flaming June"</span> by Frederic Leighton,
+            In 1962, the museum purchased
+            <span className="italic">"Flaming June"</span> by Frederic Leighton,
             which would become one of its most iconic pieces.
           </h3>
         </div>
       </div>
-    </section>
+
+      <SVGPath />
+    </motion.section>
   );
 }
 

@@ -11,6 +11,8 @@ import SVGPath from "@/components/Growth/SVGPath";
 import ImgScale from "@/components/FlamingJune/ImgScale";
 import Figure from "@/components/FlamingJune/Figure";
 import Pose from "@/components/FlamingJune/Pose";
+import MuseumPicture from "@/components/MuseumPicture/MuseumPicture";
+import Collections from "@/components/Collections/Collections";
 
 export default function Home() {
   useEffect(() => {
@@ -26,13 +28,14 @@ export default function Home() {
 
   return (
     <main>
-      {/* <Header /> */}
-      {/* <Hero /> */}
+      <Header />
+      <Hero />
       {/* <Parallax /> */}
-      {/* <Growth />
-      <SVGPath />
-      <ImgScale /> */}
+      <Growth />
+      {/* <ImgScale /> */}
       <Figure />
+      <MuseumPicture />
+      <Collections />
     </main>
   );
 }
